@@ -1,10 +1,13 @@
 /**
  * BizJapan News & Insights Styling
- * Modern 3-Column Card Layout, Category Badges & Article CTA Box
+ * Modern 3-Column Card Layout, Category Badges & Dedicated Single Post Styling
  * Main Color: #0b57d0 (Royal Blue)
  */
 
-/* Container */
+/* ==========================================================================
+   1. FRONT PAGE / NEWS ARCHIVE CARDS
+   ========================================================================== */
+
 .bizjapan-news-container {
     width: 100%;
     max-width: 1200px;
@@ -12,7 +15,6 @@
     padding: 20px 0;
 }
 
-/* Grid Layout: 3 Columns on Desktop */
 .bizjapan-news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -20,7 +22,6 @@
     align-items: stretch;
 }
 
-/* News Card */
 .bizjapan-news-card {
     background: #ffffff;
     border-radius: 12px;
@@ -57,7 +58,6 @@
     opacity: 1;
 }
 
-/* Card Header: Category & Date */
 .news-card-header {
     display: flex;
     justify-content: space-between;
@@ -86,7 +86,6 @@
     white-space: nowrap;
 }
 
-/* Card Title */
 .news-title {
     font-size: 19px;
     font-weight: 700;
@@ -105,7 +104,6 @@
     color: #0b57d0;
 }
 
-/* Card Excerpt */
 .news-excerpt {
     font-size: 14.5px;
     color: #475569;
@@ -114,7 +112,6 @@
     flex-grow: 1;
 }
 
-/* Card Footer */
 .news-footer {
     border-top: 1px solid #f1f5f9;
     padding-top: 16px;
@@ -145,6 +142,175 @@
     transform: translateX(4px);
 }
 
+/* ==========================================================================
+   2. DEDICATED SINGLE POST (NEWS 詳細ページ) STYLING
+   ========================================================================== */
+
+/* Main Container with Header Clearance */
+.bizjapan-single-main {
+    background-color: #f8fafc;
+    padding-top: 125px; /* Clear fixed top header */
+    padding-bottom: 75px;
+    min-height: 85vh;
+}
+
+.bizjapan-single-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* White Elevated Article Card */
+.bizjapan-single-article {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 48px 52px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f6;
+}
+
+/* Breadcrumb Navigation */
+.bizjapan-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: #64748b;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.bizjapan-breadcrumb .bc-link {
+    color: #0b57d0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.bizjapan-breadcrumb .bc-link:hover {
+    text-decoration: underline;
+}
+
+.bizjapan-breadcrumb .bc-sep {
+    margin: 0 8px;
+    color: #cbd5e1;
+}
+
+.bizjapan-breadcrumb .bc-cat {
+    color: #475569;
+    font-weight: 500;
+}
+
+.bizjapan-breadcrumb .bc-current {
+    color: #94a3b8;
+}
+
+/* Article Header & Meta Bar */
+.bizjapan-article-header {
+    margin-bottom: 30px;
+}
+
+.article-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.article-cat-badge {
+    background: #e8f0fe;
+    color: #0b57d0;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    line-height: 1.4;
+}
+
+.article-date,
+.article-author {
+    font-size: 13.5px;
+    color: #64748b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.meta-icon {
+    font-size: 14px;
+}
+
+.bizjapan-single-title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.42;
+    color: #0f172a;
+    margin: 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Article Body Typography */
+.bizjapan-article-content {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #334155;
+}
+
+.bizjapan-article-content p {
+    margin: 0 0 22px 0;
+}
+
+.bizjapan-article-content strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* Section Headings inside Article */
+.bizjapan-article-content h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 42px 0 20px 0;
+    padding: 12px 18px;
+    background: linear-gradient(90deg, #f0f6ff 0%, #ffffff 100%);
+    border-left: 5px solid #0b57d0;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+
+.bizjapan-article-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 32px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+    line-height: 1.4;
+}
+
+/* Lists inside Article */
+.bizjapan-article-content ul,
+.bizjapan-article-content ol {
+    margin: 16px 0 24px 0;
+    padding-left: 24px;
+}
+
+.bizjapan-article-content li {
+    margin-bottom: 10px;
+    line-height: 1.75;
+}
+
+.bizjapan-article-content ul li::marker {
+    color: #0b57d0;
+}
+
+.bizjapan-article-content ol li::marker {
+    color: #0b57d0;
+    font-weight: 700;
+}
+
 /* Single Post CTA Box */
 .bizjapan-article-cta-box {
     margin: 48px 0 24px 0;
@@ -152,7 +318,7 @@
     background: linear-gradient(135deg, #0b57d0 0%, #0945a5 100%);
     border-radius: 16px;
     color: #ffffff;
-    box-shadow: 0 10px 30px rgba(11, 87, 208, 0.25);
+    box-shadow: 0 10px 30px rgba(11, 87, 208, 0.22);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -192,7 +358,7 @@
 .article-cta-desc {
     font-size: 15px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.92);
     max-width: 680px;
     margin: 0 auto 24px auto;
 }
@@ -227,11 +393,95 @@
     transform: translateX(4px);
 }
 
-/* Responsive adjustments */
+/* Article Footer: Tags & Return to Home */
+.bizjapan-article-footer {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.article-tags-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.tags-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-pill {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.article-nav-bottom {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-return-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0b57d0;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-return-home:hover {
+    background: #0b57d0;
+    color: #ffffff;
+    border-color: #0b57d0;
+}
+
+.btn-return-home .arrow {
+    transition: transform 0.2s ease;
+}
+
+.btn-return-home:hover .arrow {
+    transform: translateX(-3px);
+}
+
+/* Suppress comment section on posts */
+.single-post #comments,
+.single-post .comment-respond {
+    display: none !important;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
 @media screen and (max-width: 991px) {
     .bizjapan-news-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+
+    .bizjapan-single-article {
+        padding: 36px 32px;
     }
 }
 
@@ -249,12 +499,49 @@
         font-size: 17.5px;
     }
 
+    /* Single post mobile */
+    .bizjapan-single-main {
+        padding-top: 95px;
+        padding-bottom: 45px;
+    }
+
+    .bizjapan-single-container {
+        padding: 0 14px;
+    }
+
+    .bizjapan-single-article {
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .bizjapan-single-title {
+        font-size: 21px;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+    }
+
+    .bizjapan-article-content {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .bizjapan-article-content h2 {
+        font-size: 17.5px;
+        padding: 10px 14px;
+        margin: 32px 0 16px 0;
+    }
+
+    .bizjapan-article-content h3 {
+        font-size: 16px;
+    }
+
     .bizjapan-article-cta-box {
-        padding: 28px 20px;
+        padding: 28px 18px;
+        border-radius: 12px;
     }
 
     .article-cta-title {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .article-cta-btn {
