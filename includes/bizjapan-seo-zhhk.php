@@ -175,21 +175,17 @@ function bizjapan_output_structured_data() {
 add_action( 'wp_head', 'bizjapan_output_structured_data', 20 );
 
 /**
- * 6. Mobile Floating Sticky CTA Bar (WhatsApp / Free Consultation)
+ * 6. Mobile Floating Sticky CTA Bar (Free Consultation)
  */
 function bizjapan_mobile_sticky_cta() {
-	if ( is_admin() ) {
+	if ( is_admin() || is_page( 'contact-us' ) || is_page( 'contact' ) ) {
 		return;
 	}
 	?>
 	<div id="bizjapan-mobile-cta" class="bizjapan-sticky-bar">
-		<a href="https://api.whatsapp.com/send?text=你好，我想查詢日本設立公司及商業代辦服務" target="_blank" rel="noopener noreferrer" class="bizjapan-cta-btn bizjapan-cta-whatsapp">
-			<span class="cta-icon">💬</span>
-			<span class="cta-text">WhatsApp 查詢</span>
-		</a>
 		<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="bizjapan-cta-btn bizjapan-cta-contact">
 			<span class="cta-icon">✉️</span>
-			<span class="cta-text">免費諮詢</span>
+			<span class="cta-text">免費商業諮詢 (Online Inquiry)</span>
 		</a>
 	</div>
 	<?php

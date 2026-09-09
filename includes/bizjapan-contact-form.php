@@ -56,7 +56,7 @@ function bizjapan_process_contact_form() {
 	$body .= "■ 姓名 / 聯絡人: " . $name . "\n";
 	$body .= "■ 公司名稱: " . ( ! empty( $company ) ? $company : '（未填寫）' ) . "\n";
 	$body .= "■ 電郵地址: " . $email . "\n";
-	$body .= "■ 聯絡電話 / WhatsApp: " . $phone . "\n";
+	$body .= "■ 聯絡電話: " . $phone . "\n";
 	$body .= "■ 諮詢服務類別: " . $service . "\n\n";
 	$body .= "--------------------------------------------------\n";
 	$body .= "■ 諮詢內容與需求:\n";
@@ -77,12 +77,11 @@ function bizjapan_process_contact_form() {
 	$reply_subject = '【商業代辦服務 by OSCAR】已收到閣下的商業諮詢登記';
 	$reply_body  = "親愛的 " . $name . " 閣下：\n\n";
 	$reply_body .= "感謝閣下聯絡「商業代辦服務 by OSCAR」。我們已順利收到您的諮詢登記！\n\n";
-	$reply_body .= "我們的專業顧問團隊將於 1-2 個工作天內檢閱您的需求，並透過電郵或 WhatsApp 與閣下聯絡，提供專屬建議。\n\n";
+	$reply_body .= "我們的專業顧問團隊將於 1-2 個工作天內檢閱您的需求，並透過電郵與閣下聯絡，提供專屬建議。\n\n";
 	$reply_body .= "--------------------------------------------------\n";
 	$reply_body .= "■ 登記服務類別: " . $service . "\n";
 	$reply_body .= "■ 您的聯絡電話: " . $phone . "\n";
 	$reply_body .= "--------------------------------------------------\n\n";
-	$reply_body .= "如有緊急事項，亦歡迎隨時透過 WhatsApp 與我們即時溝通。\n\n";
 	$reply_body .= "商業代辦服務 by OSCAR 團隊 敬上\n";
 	$reply_body .= "網站: https://bizjapan.oscarchair.jp/\n";
 
@@ -207,7 +206,7 @@ function bizjapan_render_contact_form() {
 					<div class="form-header-area">
 						<span class="form-header-badge">ONLINE INQUIRY</span>
 						<h3 class="form-main-heading">線上商業諮詢登記</h3>
-						<p class="form-main-sub">請填妥以下資料，專屬商業顧問將於 1-2 個工作天內透過電郵或 WhatsApp 與您聯絡。</p>
+						<p class="form-main-sub">請填妥以下資料，專屬商業顧問將於 1-2 個工作天內透過電郵與您聯絡。</p>
 					</div>
 
 					<?php if ( ! empty( $result ) ) : ?>
@@ -254,9 +253,9 @@ function bizjapan_render_contact_form() {
 									<input type="email" name="contact_email" id="contact_email" required placeholder="例：name@example.com" value="<?php echo esc_attr( $_POST['contact_email'] ?? '' ); ?>">
 								</div>
 
-								<!-- Phone / WhatsApp -->
+								<!-- Phone -->
 								<div class="form-group">
-									<label for="contact_phone">聯絡電話 / WhatsApp <span class="required">*</span></label>
+									<label for="contact_phone">聯絡電話 <span class="required">*</span></label>
 									<input type="tel" name="contact_phone" id="contact_phone" required placeholder="例：+852 9123 4567" value="<?php echo esc_attr( $_POST['contact_phone'] ?? '' ); ?>">
 								</div>
 

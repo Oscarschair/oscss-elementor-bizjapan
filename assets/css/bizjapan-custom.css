@@ -52,20 +52,13 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select, button {
     transform: scale(0.97);
   }
 
-  /* WhatsApp Brand Green Button */
-  .bizjapan-sticky-bar .bizjapan-cta-whatsapp {
-    background-color: #25D366;
-    color: #ffffff !important;
-  }
-
-  .bizjapan-sticky-bar .bizjapan-cta-whatsapp:hover {
-    filter: brightness(1.05);
-  }
-
-  /* Primary Blue Button (Consultation) */
+  /* Primary Blue Button (Consultation Full-Width) */
   .bizjapan-sticky-bar .bizjapan-cta-contact {
-    background-color: #0b57d0;
+    background: linear-gradient(135deg, #0b57d0 0%, #1e40af 100%);
     color: #ffffff !important;
+    padding: 14px 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 14px rgba(11, 87, 208, 0.4);
   }
 
   .bizjapan-sticky-bar .bizjapan-cta-contact:hover {

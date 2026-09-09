@@ -51,6 +51,7 @@
 | [0008-generated-modern-image-replacement.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0008-generated-modern-image-replacement.md) | AI画像生成による古臭い画像の一新及び透過的自動置換フィルター導入の決定 |
 | [0009-contact-page-modern-ui-redesign.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0009-contact-page-modern-ui-redesign.md) | お問い合わせページ全体のモダンUIリデザインと2カラム信頼レイアウトの導入 |
 | [0010-reviewers-deploy-hooks-and-flow-width.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0010-reviewers-deploy-hooks-and-flow-width.md) | デプロイ時レビューフック（uxui_reviewer & seo_reviewer）の導入及びフロー図最大幅800px適正化 |
+| [0011-remove-whatsapp-cta.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0011-remove-whatsapp-cta.md) | WhatsApp連携ボタンの完全削除とEメール問い合わせ窓口（Contact Us）への一本化 |
 
 ### 4. ドメイン・機能詳細仕様書 (`docs/domains/`)
 | ドメイン設計書 | 内容 |
