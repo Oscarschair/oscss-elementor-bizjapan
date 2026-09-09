@@ -142,6 +142,44 @@
     transform: translateX(4px);
 }
 
+/* Front Page "View All News" Button */
+.news-view-all-container {
+    text-align: center;
+    margin-top: 36px;
+    padding-top: 10px;
+}
+
+.btn-news-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0b57d0 0%, #0945a5 100%);
+    color: #ffffff;
+    font-size: 15.5px;
+    font-weight: 700;
+    padding: 13px 34px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(11, 87, 208, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-news-view-all:hover {
+    background: linear-gradient(135deg, #0945a5 0%, #063482 100%);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(11, 87, 208, 0.35);
+    gap: 14px;
+}
+
+.btn-news-view-all .btn-arrow {
+    transition: transform 0.2s ease;
+}
+
+.btn-news-view-all:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
 /* ==========================================================================
    2. DEDICATED SINGLE POST (NEWS 詳細ページ) STYLING
    ========================================================================== */
@@ -432,7 +470,38 @@
 
 .article-nav-bottom {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-return-news {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0b57d0;
+    border: 1px solid #0b57d0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-return-news:hover {
+    background: #0842a0;
+    border-color: #0842a0;
+    color: #ffffff;
+}
+
+.btn-return-news .arrow {
+    transition: transform 0.2s ease;
+}
+
+.btn-return-news:hover .arrow {
+    transform: translateX(-3px);
 }
 
 .btn-return-home {
@@ -456,12 +525,196 @@
     border-color: #0b57d0;
 }
 
-.btn-return-home .arrow {
-    transition: transform 0.2s ease;
+/* ==========================================================================
+   3. NEWS ARCHIVE & LISTING PAGE (page-news.php / archive.php)
+   ========================================================================== */
+
+.bizjapan-news-archive-main {
+    background-color: #f8fafc;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    min-height: 85vh;
 }
 
-.btn-return-home:hover .arrow {
-    transform: translateX(-3px);
+/* Archive Hero Banner */
+.news-archive-hero {
+    background: linear-gradient(135deg, #0b57d0 0%, #083c94 100%);
+    padding: 44px 20px 58px 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-archive-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+}
+
+.news-hero-container {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.news-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 18px;
+}
+
+.news-breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.news-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.news-breadcrumb .sep {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.news-breadcrumb .current {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.news-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    backdrop-filter: blur(4px);
+}
+
+.news-hero-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 14px 0;
+    line-height: 1.35;
+}
+
+.news-hero-desc {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Archive Container */
+.news-archive-container {
+    max-width: 1200px;
+    margin: -24px auto 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Category Filters */
+.news-category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filter-tab {
+    background: #ffffff;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.filter-tab:hover {
+    color: #0b57d0;
+    border-color: #bfdbfe;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 87, 208, 0.1);
+}
+
+.filter-tab.active {
+    background: #0b57d0;
+    color: #ffffff;
+    border-color: #0b57d0;
+    box-shadow: 0 4px 14px rgba(11, 87, 208, 0.3);
+}
+
+/* Pagination */
+.news-pagination-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 48px 0 24px 0;
+}
+
+.news-pagination-wrap .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.news-pagination-wrap .page-numbers.current {
+    background: #0b57d0;
+    color: #ffffff;
+    border-color: #0b57d0;
+}
+
+.news-pagination-wrap .page-numbers:hover:not(.current) {
+    border-color: #0b57d0;
+    color: #0b57d0;
+    transform: translateY(-1px);
+}
+
+.news-no-results {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+    border: 1px dashed #cbd5e1;
+    margin-bottom: 40px;
 }
 
 /* Suppress comment section on posts */
@@ -548,5 +801,45 @@
         width: 100%;
         justify-content: center;
         padding: 13px 20px;
+    }
+
+    /* Archive mobile */
+    .bizjapan-news-archive-main {
+        padding-top: 85px;
+        padding-bottom: 50px;
+    }
+
+    .news-archive-hero {
+        padding: 36px 16px 48px 16px;
+    }
+
+    .news-hero-title {
+        font-size: 24px;
+    }
+
+    .news-hero-desc {
+        font-size: 14px;
+    }
+
+    .news-archive-container {
+        margin-top: -18px;
+        padding: 0 14px;
+    }
+
+    .news-category-filters {
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .filter-tab {
+        font-size: 12.5px;
+        padding: 7px 14px;
+    }
+
+    .btn-news-view-all {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14.5px;
     }
 }

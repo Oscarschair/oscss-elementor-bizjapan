@@ -26,7 +26,7 @@ while ( have_posts() ) :
 			<nav class="bizjapan-breadcrumb" aria-label="Breadcrumb">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bc-link">首頁</a>
 				<span class="bc-sep">/</span>
-				<span class="bc-cat"><?php echo esc_html( $cat_name ); ?></span>
+				<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="bc-link">最新資訊與專題文章</a>
 				<span class="bc-sep">/</span>
 				<span class="bc-current"><?php echo esc_html( wp_trim_words( get_the_title(), 10, '...' ) ); ?></span>
 			</nav>
@@ -67,8 +67,11 @@ while ( have_posts() ) :
 				<?php endif; ?>
 
 				<div class="article-nav-bottom">
+					<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="btn-return-news">
+						<span class="arrow">←</span> 返回最新資訊列表 (All News)
+					</a>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn-return-home">
-						<span class="arrow">←</span> 返回官方首頁 (Back to Home)
+						<span>官方首頁 (Home)</span>
 					</a>
 				</div>
 			</footer>

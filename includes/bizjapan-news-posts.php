@@ -59,6 +59,12 @@ function bizjapan_render_news_section( $limit = 3 ) {
 				<p class="bizjapan-no-news">目前尚無最新文章。</p>
 			<?php endif; ?>
 		</div>
+		<div class="news-view-all-container">
+			<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="btn-news-view-all">
+				<span>查看所有最新資訊與專題 (View All News)</span>
+				<span class="btn-arrow">➔</span>
+			</a>
+		</div>
 	</div>
 	<?php
 	return ob_get_clean();
