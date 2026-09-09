@@ -34,6 +34,7 @@
 | [0002-seo-zhhk-localization-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0002-seo-zhhk-localization-spec.md) | SEO最適化・香港標準書面語 (zh-HK) ・モバイルCTA仕様書 |
 | [0003-lolipop-deployment-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0003-lolipop-deployment-spec.md) | ロリポップ自動デプロイ・SSH Paramiko・キャッシュパージ仕様書 |
 | [0004-contact-form-email-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0004-contact-form-email-spec.md) | 自社製お問い合わせフォーム及びメール通知 (contact@oscarchair.jp) 仕様書 |
+| [0005-responsive-design-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0005-responsive-design-spec.md) | マルチデバイス完全レスポンシブデザイン仕様書 |
 
 ### 3. アーキテクチャ意思決定ログ (ADR: `docs/adr/`)
 | ADR | 決定内容 |
@@ -44,6 +45,7 @@
 | [0003-lolipop-paramiko-cache-purge-deploy.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0003-lolipop-paramiko-cache-purge-deploy.md) | ロリポップにおける SSH+Paramiko 自動デプロイ及びキャッシュパージ方式の採用 |
 | [0004-mobile-floating-cta-strategy.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0004-mobile-floating-cta-strategy.md) | 香港市場に特化したモバイル固定 WhatsApp / 無料相談バー (Sticky CTA) 導入の決定 |
 | [0005-custom-contact-form-system.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0005-custom-contact-form-system.md) | Googleフォームからテーマ内蔵自社製Webフォーム（青基調）への移行及び自動メール通知の決定 |
+| [0006-responsive-optimization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0006-responsive-optimization.md) | 専用レスポンシブスタイルシートと Fluid Typography による完全レスポンシブ化の決定 |
 
 ### 4. ドメイン・機能詳細仕様書 (`docs/domains/`)
 | ドメイン設計書 | 内容 |

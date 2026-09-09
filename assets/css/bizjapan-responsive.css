@@ -1,0 +1,249 @@
+/**
+ * BizJapan Universal Responsive Design Stylesheet
+ * Ensures 100% responsive behavior on Mobile (375px-414px), Tablet (768px-1024px), and Desktop (1280px+)
+ */
+
+/* ==========================================================================
+   1. Global Base & Overflow-X Prevention (Horizontal Overflow Shield)
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Images & Media responsive guarantee */
+img, svg, video, canvas, audio, iframe, embed, object {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* ==========================================================================
+   2. Responsive Typography (Fluid Heading Sizes)
+   Overrides hardcoded 34pt, 24pt inline styles on tablets & mobile
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  /* Hero Main Title */
+  h1.elementor-heading-title,
+  .elementor-widget-heading h1 {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Section Titles (overrides font-size: 34pt / 24pt) */
+  h2.elementor-heading-title,
+  .elementor-widget-heading h2,
+  .elementor-heading-title span[style*="font-size"] {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Subtitles & H3 */
+  h3.elementor-heading-title,
+  .elementor-widget-heading h3 {
+    font-size: clamp(17px, 4.5vw, 20px) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Body & Paragraph Text readability */
+  p, .elementor-heading-title, .elementor-text-editor {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Hero Section Padding */
+  .elementor-element-d5cfde3 {
+    padding-top: 80px !important;
+    padding-bottom: 50px !important;
+  }
+}
+
+/* ==========================================================================
+   3. Header & Navigation Mobile Layout
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  header#masthead {
+    width: 100% !important;
+  }
+
+  header .elementor-element.e-parent {
+    width: 100% !important;
+    padding: 10px 16px !important;
+    box-sizing: border-box;
+  }
+
+  .hfe-heading-text {
+    font-size: 18px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #nav_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hfe-nav-menu a.hfe-menu-item {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* ==========================================================================
+   4. Container & Card Layouts (Flex & Grid Stacking)
+   ========================================================================== */
+
+/* Tablet (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Service cards 2 columns */
+  .elementor-element-b2d7dbe {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Did You Know 2 columns */
+  .elementor-element-2230900 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Testimonials 2 columns */
+  .elementor-element-3e87c6c2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+/* Mobile (<= 767px) */
+@media screen and (max-width: 767px) {
+  /* Container inner padding */
+  .e-con-inner,
+  .elementor-element.e-parent {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Services cards: Stack vertically in 1 column */
+  .elementor-element-b2d7dbe {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .elementor-widget-image-box {
+    width: 100% !important;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+  }
+
+  .elementor-image-box-img img {
+    height: 180px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 8px;
+  }
+
+  /* Did You Know boxes: Stack in 1 column */
+  .elementor-element-2230900 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .elementor-element-28ff6772,
+  .elementor-element-3c11ef1e,
+  .elementor-element-3422c57e,
+  .elementor-element-896f1cc {
+    width: 100% !important;
+    padding: 20px 16px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Government Funding / Testimonials: Stack in 1 column */
+  .elementor-element-3e87c6c2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .elementor-testimonial-wrapper {
+    padding: 20px 16px !important;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    box-sizing: border-box !important;
+  }
+
+  /* Process Flow images responsive container */
+  .elementor-element-df41cae img,
+  .elementor-element-42a0550 img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   5. Buttons & Touch Target Optimization (WCAG Minimum 44x44px)
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  .elementor-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    min-width: 160px !important;
+    padding: 12px 28px !important;
+    font-size: 16px !important;
+    border-radius: 28px !important;
+  }
+
+  /* Hero CTA button full-width tap on mobile */
+  .elementor-element-2a921c06 .elementor-button,
+  .elementor-element-33e86e03 .elementor-button {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+}
+
+/* ==========================================================================
+   6. Contact Us Page Specific Responsive Fixes
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  #contact_hero img {
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 8px;
+  }
+
+  .elementor-element-e31cb4d h1 {
+    font-size: 26px !important;
+    text-align: center;
+    margin-top: 16px !important;
+  }
+
+  /* Google Form Iframe fallback responsive container if still present */
+  iframe[src*="docs.google.com/forms"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 600px !important;
+  }
+}
