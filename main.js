@@ -1,16 +1,42 @@
-window.addEventListener("scroll", function(event) {
-    var top = this.scrollY;
-    var headers = document.getElementsByClassName('e-parent');
-    var headingTexts = document.getElementsByClassName('hfe-heading-text');
-    var navCurrentTexts = document.getElementsByClassName('current_page_item');
-    if (top > 20) {
-        headers[0].classList.add('change-color');
-        headingTexts[0].classList.add('change-color');
-        navCurrentTexts[0].classList.add('change-color');
-    } else {
-        headers[0].classList.remove('change-color');
-        headingTexts[0].classList.remove('change-color');
-        navCurrentTexts[0].classList.remove('change-color');
-    }
-}, false);
+/**
+ * BizJapan Main Theme Script
+ * Optimized scroll header color changer with null-safety and requestAnimationFrame throttling
+ */
+(function() {
+  'use strict';
 
+  var ticking = false;
+
+  function updateHeaderOnScroll() {
+    var top = window.scrollY || window.pageYOffset || 0;
+    var headers = document.querySelectorAll('header .elementor-element.e-parent');
+    var headingTexts = document.querySelectorAll('header .hfe-heading-text');
+    var navCurrentTexts = document.querySelectorAll('header .current_page_item, header .current-menu-item');
+
+    var shouldChange = top > 20;
+
+    headers.forEach(function(el) {
+      if (el) el.classList.toggle('change-color', shouldChange);
+    });
+
+    headingTexts.forEach(function(el) {
+      if (el) el.classList.toggle('change-color', shouldChange);
+    });
+
+    navCurrentTexts.forEach(function(el) {
+      if (el) el.classList.toggle('change-color', shouldChange);
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeaderOnScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial check on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', updateHeaderOnScroll);
+})();

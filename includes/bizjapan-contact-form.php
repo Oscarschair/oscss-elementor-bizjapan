@@ -13,22 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 const BIZJAPAN_ADMIN_EMAIL = 'contact@oscarchair.jp';
 
 /**
- * 1. Enqueue Contact Form CSS
- */
-function bizjapan_contact_form_assets() {
-	if ( is_page( 'contact-us' ) || is_page( 'contact' ) || has_shortcode( get_post()->post_content ?? '', 'bizjapan_contact_form' ) ) {
-		wp_enqueue_style(
-			'bizjapan-contact-form-css',
-			get_template_directory_uri() . '/assets/css/bizjapan-contact-form.css',
-			[],
-			'1.0.0'
-		);
-	}
-}
-add_action( 'wp_enqueue_scripts', 'bizjapan_contact_form_assets' );
-
-/**
- * 2. Contact Form Submission Handler
+ * 1. Contact Form Submission Handler
  */
 function bizjapan_process_contact_form() {
 	if ( ! isset( $_POST['bizjapan_contact_action'] ) || 'submit' !== $_POST['bizjapan_contact_action'] ) {

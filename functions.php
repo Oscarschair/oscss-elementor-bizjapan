@@ -264,16 +264,15 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 	}
 }
 
-function add_enqueue_scripts() {
-	wp_enqueue_script( 
-	  'main-script', 
-	  get_template_directory_uri() . '/main.js' 
-	);
-}
-add_action( 'wp_enqueue_scripts', 'add_enqueue_scripts' );
+// =========================================================================
+// BizJapan Custom Theme Modules
+// =========================================================================
 
-// BizJapan SEO & Hong Kong (zh-HK) Localization Module
+// 1. Unified Assets Management (CSS, JS & Versioning)
+require_once get_template_directory() . '/includes/bizjapan-assets.php';
+
+// 2. SEO & Hong Kong (zh-HK) Localization Module
 require_once get_template_directory() . '/includes/bizjapan-seo-zhhk.php';
 
-// BizJapan Custom Contact Form & Email Notification Module (contact@oscarchair.jp)
+// 3. Custom Contact Form & Email Notification Module (contact@oscarchair.jp)
 require_once get_template_directory() . '/includes/bizjapan-contact-form.php';

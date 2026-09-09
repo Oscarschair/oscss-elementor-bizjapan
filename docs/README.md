@@ -46,6 +46,7 @@
 | [0004-mobile-floating-cta-strategy.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0004-mobile-floating-cta-strategy.md) | 香港市場に特化したモバイル固定 WhatsApp / 無料相談バー (Sticky CTA) 導入の決定 |
 | [0005-custom-contact-form-system.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0005-custom-contact-form-system.md) | Googleフォームからテーマ内蔵自社製Webフォーム（青基調）への移行及び自動メール通知の決定 |
 | [0006-responsive-optimization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0006-responsive-optimization.md) | 専用レスポンシブスタイルシートと Fluid Typography による完全レスポンシブ化の決定 |
+| [0007-codebase-refactoring-modularization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0007-codebase-refactoring-modularization.md) | コードベースのリファクタリング（モジュール分離・アセット一元管理・スクリプト最適化） |
 
 ### 4. ドメイン・機能詳細仕様書 (`docs/domains/`)
 | ドメイン設計書 | 内容 |

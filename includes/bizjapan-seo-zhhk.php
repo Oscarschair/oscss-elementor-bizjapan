@@ -173,23 +173,3 @@ function bizjapan_mobile_sticky_cta() {
 }
 add_action( 'wp_footer', 'bizjapan_mobile_sticky_cta' );
 
-/**
- * 7. Enqueue Custom CSS for Sticky CTA, HK Typography & Universal Responsive Design
- */
-function bizjapan_enqueue_custom_styles() {
-	wp_enqueue_style(
-		'bizjapan-custom-style',
-		get_template_directory_uri() . '/assets/css/bizjapan-custom.css',
-		[],
-		'1.0.0'
-	);
-
-	wp_enqueue_style(
-		'bizjapan-responsive-style',
-		get_template_directory_uri() . '/assets/css/bizjapan-responsive.css',
-		[ 'bizjapan-custom-style' ],
-		'1.0.0'
-	);
-}
-add_action( 'wp_enqueue_scripts', 'bizjapan_enqueue_custom_styles', 99 );
-
