@@ -49,6 +49,7 @@
 | [0006-responsive-optimization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0006-responsive-optimization.md) | 専用レスポンシブスタイルシートと Fluid Typography による完全レスポンシブ化の決定 |
 | [0007-codebase-refactoring-modularization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0007-codebase-refactoring-modularization.md) | コードベースのリファクタリング（モジュール分離・アセット一元管理・スクリプト最適化） |
 | [0008-generated-modern-image-replacement.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0008-generated-modern-image-replacement.md) | AI画像生成による古臭い画像の一新及び透過的自動置換フィルター導入の決定 |
+| [0009-contact-page-modern-ui-redesign.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0009-contact-page-modern-ui-redesign.md) | お問い合わせページ全体のモダンUIリデザインと2カラム信頼レイアウトの導入 |
 
 ### 4. ドメイン・機能詳細仕様書 (`docs/domains/`)
 | ドメイン設計書 | 内容 |

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'BIZJAPAN_ASSETS_VERSION' ) ) {
-	define( 'BIZJAPAN_ASSETS_VERSION', '1.1.0' );
+	define( 'BIZJAPAN_ASSETS_VERSION', '1.2.0' );
 }
 
 /**
