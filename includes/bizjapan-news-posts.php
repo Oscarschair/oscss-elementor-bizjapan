@@ -70,12 +70,11 @@ add_shortcode( 'bizjapan_news_list', 'bizjapan_render_news_section' );
  */
 function bizjapan_replace_other_info_with_news( $content ) {
 	if ( is_front_page() || is_home() ) {
-		// Target the container that wraps the testimonial elements (data-id="3e87c6c2")
-		// Matches from start of elementor-element-3e87c6c2 up to right before elementor-element-63e03c6
-		$pattern = '/<div[^>]*class="[^"]*elementor-element-3e87c6c2[^"]*"[^>]*>.*?(?=\s*<div[^>]*class="[^"]*elementor-element-63e03c6)/is';
+		// Target the entire container and sibling widgets of the old testimonials (3e87c6c2 through 7ff56a9e)
+		$pattern = '/<div[^>]*class="[^"]*elementor-element-3e87c6c2[^"]*"[^>]*>.*?<div[^>]*class="[^"]*elementor-element-7ff56a9e[^"]*"[^>]*>.*?<\/div>\s*<\/div>\s*<\/div>/is';
 		if ( preg_match( $pattern, $content ) ) {
 			$news_html = bizjapan_render_news_section( 3 );
-			// Wrap in elementor-compatible container
+			// Wrap in clean elementor container
 			$replacement = '<div class="elementor-element elementor-element-3e87c6c2 e-con-full e-flex e-con e-child" data-id="3e87c6c2" data-element_type="container">' . $news_html . '</div>';
 			$content = preg_replace( $pattern, $replacement, $content );
 		}
@@ -84,6 +83,7 @@ function bizjapan_replace_other_info_with_news( $content ) {
 }
 add_filter( 'the_content', 'bizjapan_replace_other_info_with_news', 25 );
 add_filter( 'elementor/frontend/the_content', 'bizjapan_replace_other_info_with_news', 25 );
+
 
 
 /**
