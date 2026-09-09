@@ -276,3 +276,6 @@ require_once get_template_directory() . '/includes/bizjapan-seo-zhhk.php';
 
 // 3. Custom Contact Form & Email Notification Module (contact@oscarchair.jp)
 require_once get_template_directory() . '/includes/bizjapan-contact-form.php';
+
+// 4. Dynamic News & Insights Module (其他資訊 投稿連動)
+require_once get_template_directory() . '/includes/bizjapan-news-posts.php';

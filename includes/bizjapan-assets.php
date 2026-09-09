@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'BIZJAPAN_ASSETS_VERSION' ) ) {
-	define( 'BIZJAPAN_ASSETS_VERSION', '1.3.1' );
+	define( 'BIZJAPAN_ASSETS_VERSION', '1.3.2' );
 }
 
 /**
@@ -45,7 +45,15 @@ function bizjapan_enqueue_theme_assets() {
 		BIZJAPAN_ASSETS_VERSION
 	);
 
-	// 4. Contact Form CSS (Only on contact pages or when shortcode exists)
+	// 4. Dynamic News & Insights Style
+	wp_enqueue_style(
+		'bizjapan-news-style',
+		$theme_uri . '/assets/css/bizjapan-news.css',
+		[ 'bizjapan-responsive-style' ],
+		BIZJAPAN_ASSETS_VERSION
+	);
+
+	// 5. Contact Form CSS (Only on contact pages or when shortcode exists)
 	if ( is_page( 'contact-us' ) || is_page( 'contact' ) || ( is_singular() && has_shortcode( get_post()->post_content ?? '', 'bizjapan_contact_form' ) ) ) {
 		wp_enqueue_style(
 			'bizjapan-contact-form-style',
