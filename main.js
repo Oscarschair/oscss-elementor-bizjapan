@@ -8,12 +8,14 @@
   var ticking = false;
 
   function updateHeaderOnScroll() {
+    var isHome = document.body.classList.contains('home');
     var top = window.scrollY || window.pageYOffset || 0;
     var headers = document.querySelectorAll('header .elementor-element.e-parent');
     var headingTexts = document.querySelectorAll('header .hfe-heading-text');
     var navCurrentTexts = document.querySelectorAll('header .current_page_item, header .current-menu-item');
 
-    var shouldChange = top > 20;
+    // On non-home pages, always keep solid white header; on home page, change after scrolling 20px
+    var shouldChange = !isHome || (top > 20);
 
     headers.forEach(function(el) {
       if (el) el.classList.toggle('change-color', shouldChange);

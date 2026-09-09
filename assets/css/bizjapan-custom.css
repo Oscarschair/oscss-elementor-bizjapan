@@ -81,3 +81,44 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select, button {
   transform: scale(1.03);
   transition: transform 0.3s ease;
 }
+
+/* 4. Non-Home Pages Header Style (Solid White Background & High Contrast Text) */
+body:not(.home) header .elementor-element.e-parent,
+body:not(.home) header .elementor-element.elementor-element-6c66e0b,
+body.single header .elementor-element.e-parent,
+body.single-post header .elementor-element.e-parent,
+body.archive header .elementor-element.e-parent,
+body.page-template-page-news header .elementor-element.e-parent {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  background-image: none !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+body:not(.home) header .hfe-heading-text,
+body:not(.home) header .elementor-heading-title,
+body.single header .hfe-heading-text,
+body.single-post header .hfe-heading-text,
+body.archive header .hfe-heading-text,
+body.page-template-page-news header .hfe-heading-text {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+body:not(.home) header .hfe-nav-menu li a,
+body.single header .hfe-nav-menu li a,
+body.single-post header .hfe-nav-menu li a,
+body.archive header .hfe-nav-menu li a,
+body.page-template-page-news header .hfe-nav-menu li a {
+  color: #334155 !important;
+}
+
+body:not(.home) header .hfe-nav-menu li a:hover,
+body.single header .hfe-nav-menu li a:hover,
+body.single-post header .hfe-nav-menu li a:hover,
+body.archive header .hfe-nav-menu li a:hover,
+body.page-template-page-news header .hfe-nav-menu li a:hover {
+  color: #0b57d0 !important;
+}
+
