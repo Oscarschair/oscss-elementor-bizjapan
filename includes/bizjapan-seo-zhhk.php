@@ -41,12 +41,35 @@ function bizjapan_filter_description( $description ) {
 add_filter( 'aioseo_description', 'bizjapan_filter_description', 999 );
 
 /**
- * 4. OGP Locale Optimization (zh_HK)
+ * 4. OGP & Twitter Card Optimization (zh_HK)
  */
 function bizjapan_aioseo_og_locale( $locale ) {
 	return 'zh_HK';
 }
 add_filter( 'aioseo_opengraph_locale', 'bizjapan_aioseo_og_locale', 999 );
+
+function bizjapan_output_ogp_meta_tags() {
+	if ( ! ( is_front_page() || is_home() ) ) {
+		return;
+	}
+	$title = '日本設立公司・商業代辦服務｜助香港企業一站式進軍日本市場｜OSCAR';
+	$desc  = '【香港企業專屬】專業代辦日本公司註冊、經營管理簽證、.jp域名申請及日本多言語網站製作。即使身在香港、非日本居民亦能順利在日設立「株式會社」。更可配合香港政府BUD專項基金及EMF資助。';
+	$url   = home_url( '/' );
+	$og_img = get_template_directory_uri() . '/assets/images/service-scheme-relation-zhhk.jpg';
+
+	echo "\n<!-- BizJapan Standalone OpenGraph & Twitter Meta Tags -->\n";
+	echo '<meta property="og:title" content="' . esc_attr( $title ) . '">' . "\n";
+	echo '<meta property="og:description" content="' . esc_attr( $desc ) . '">' . "\n";
+	echo '<meta property="og:url" content="' . esc_url( $url ) . '">' . "\n";
+	echo '<meta property="og:type" content="website">' . "\n";
+	echo '<meta property="og:locale" content="zh_HK">' . "\n";
+	echo '<meta property="og:image" content="' . esc_url( $og_img ) . '">' . "\n";
+	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+	echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '">' . "\n";
+	echo '<meta name="twitter:description" content="' . esc_attr( $desc ) . '">' . "\n";
+	echo '<meta name="twitter:image" content="' . esc_url( $og_img ) . '">' . "\n";
+}
+add_action( 'wp_head', 'bizjapan_output_ogp_meta_tags', 5 );
 
 /**
  * 5. Structured Data (JSON-LD) for Services and FAQ

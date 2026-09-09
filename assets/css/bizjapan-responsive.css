@@ -191,14 +191,43 @@ img, svg, video, canvas, audio, iframe, embed, object {
     box-sizing: border-box !important;
   }
 
-  /* Process Flow images responsive container */
-  .elementor-element-df41cae img,
-  .elementor-element-42a0550 img {
-    width: 100% !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-  }
+}
+
+/* ==========================================================================
+   4.5 Process Flow Diagrams Size & Card Optimization (Proposal A: 800px)
+   Restricts max-width to 800px on all devices to eliminate visual cramming
+   ========================================================================== */
+.elementor-element-df41cae,
+.elementor-element-42a0550 {
+  max-width: 800px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+}
+
+.elementor-element-df41cae img,
+.elementor-element-42a0550 img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.elementor-element-df41cae img:hover,
+.elementor-element-42a0550 img:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35) !important;
+}
+
+.elementor-element-df41cae {
+  margin-bottom: 32px !important;
 }
 
 /* ==========================================================================

@@ -1,0 +1,34 @@
+{
+  "uxui-reviewer-deploy-hook": {
+    "enabled": true,
+    "description": "Executes UX/UI design and responsive checks upon production deployment",
+    "PostToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"if ($env:LAST_COMMAND -match 'deploy\\.ps1|deploy_prod') { python scripts/run_uxui_review.py }\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  },
+  "seo-reviewer-deploy-hook": {
+    "enabled": true,
+    "description": "Executes SEO, meta tags, and schema audit upon production deployment",
+    "PostToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"if ($env:LAST_COMMAND -match 'deploy\\.ps1|deploy_prod') { python scripts/run_seo_review.py }\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

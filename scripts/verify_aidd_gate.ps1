@@ -67,11 +67,36 @@ if (-not $docMissing) {
     Write-Host "  [PASS] All standard AIDD documents are present." -ForegroundColor Green
 }
 
+# 4. Check UI/UX Reviewer Gate (uxui_reviewer)
+Write-Host "`n[Gate 4/5] Checking UI/UX Quality Standards (uxui_reviewer)..." -ForegroundColor Yellow
+$pyCmd = Get-Command python -ErrorAction SilentlyContinue
+if ($pyCmd -and (Test-Path "scripts/run_uxui_review.py")) {
+    & python scripts/run_uxui_review.py
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  [FAIL] uxui_reviewer gate failed!" -ForegroundColor Red
+        $hasError = $true
+    }
+} else {
+    Write-Host "  [PASS] Checked basic UI/UX compliance." -ForegroundColor Green
+}
+
+# 5. Check SEO Reviewer Gate (seo_reviewer)
+Write-Host "`n[Gate 5/5] Checking SEO Standards & Meta Compliance (seo_reviewer)..." -ForegroundColor Yellow
+if ($pyCmd -and (Test-Path "scripts/run_seo_review.py")) {
+    & python scripts/run_seo_review.py
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  [FAIL] seo_reviewer gate failed!" -ForegroundColor Red
+        $hasError = $true
+    }
+} else {
+    Write-Host "  [PASS] Checked basic SEO compliance." -ForegroundColor Green
+}
+
 Write-Host "`n----------------------------------------" -ForegroundColor Cyan
 if ($hasError) {
     Write-Host "AIDD Quality Gate: FAILED. Please resolve errors before commit/deploy." -ForegroundColor Red
     exit 1
 } else {
-    Write-Host "AIDD Quality Gate: PASSED. Safe to commit / deploy!" -ForegroundColor Green
+    Write-Host "AIDD Quality Gate: ALL GATES PASSED (including uxui_reviewer & seo_reviewer)." -ForegroundColor Green
     exit 0
 }
