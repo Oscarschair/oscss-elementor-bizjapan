@@ -201,9 +201,13 @@ function bizjapan_modernize_outdated_images( $content ) {
 		'/https?:\/\/[^\s"\']+\/Firefly-Portrait-Photograph-departure-of-a-cargo-ship[^\s"\']*\.jpg/i'
 			=> $theme_images_uri . 'service-visa-property.jpg',
 
-		// 5. Workflow Flowchart (formerly blurry flow-2 / flow2 images)
-		'/https?:\/\/[^\s"\']+\/flow-?2[^\s"\']*\.png/i'
-			=> $theme_images_uri . 'service-workflow-flow.jpg',
+		// 5. Overall Service Scheme (formerly flow-2.png: 3-party partnership scheme diagram)
+		'/https?:\/\/[^\s"\']+\/flow-2[^\s"\']*\.png/i'
+			=> $theme_images_uri . 'service-scheme-relation-zhhk.jpg',
+
+		// 6. Company Launch 5-Step Workflow (formerly flow2.png: 5-step process flowchart)
+		'/https?:\/\/[^\s"\']+\/flow2[^\s"\']*\.png/i'
+			=> $theme_images_uri . 'service-workflow-flow-zhhk.jpg',
 	];
 
 	foreach ( $replacements as $pattern => $replacement ) {
