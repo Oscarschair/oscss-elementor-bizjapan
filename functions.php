@@ -274,3 +274,6 @@ add_action( 'wp_enqueue_scripts', 'add_enqueue_scripts' );
 
 // BizJapan SEO & Hong Kong (zh-HK) Localization Module
 require_once get_template_directory() . '/includes/bizjapan-seo-zhhk.php';
+
+// BizJapan Custom Contact Form & Email Notification Module (contact@oscarchair.jp)
+require_once get_template_directory() . '/includes/bizjapan-contact-form.php';
