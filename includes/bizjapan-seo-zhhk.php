@@ -173,3 +173,45 @@ function bizjapan_mobile_sticky_cta() {
 }
 add_action( 'wp_footer', 'bizjapan_mobile_sticky_cta' );
 
+/**
+ * 7. Modern Image Auto-Replacement Filter for e-con-inner Content
+ * Transparently replaces outdated legacy Firefly/Flow images with generated high-resolution 3D images.
+ */
+function bizjapan_modernize_outdated_images( $content ) {
+	if ( is_admin() ) {
+		return $content;
+	}
+
+	$theme_images_uri = get_template_directory_uri() . '/assets/images/';
+
+	$replacements = [
+		// 1. Service: Company Incorporation (formerly back of a man)
+		'/https?:\/\/[^\s"\']+\/Firefly-Portrait-Photograph-in-blue-color-scheme-from-far-far-far-far-far-far-angle-Back-of-a-man-w[^\s"\']*\.jpg/i'
+			=> $theme_images_uri . 'service-incorporation.jpg',
+
+		// 2. Service: JP Domain (formerly wooden building blocks)
+		'/https?:\/\/[^\s"\']+\/Firefly-Portrait-Photograph-in-blue-color-scheme-building-blocks-represent-word-\.jp[^\s"\']*\.jpg/i'
+			=> $theme_images_uri . 'service-domain.jpg',
+
+		// 3. Service: Web Design (formerly old laptop coding)
+		'/https?:\/\/[^\s"\']+\/Firefly-Firefly-Portrait-Photograph-a-notebook-coding-to-bulid-a-website-with-blue-color-scheme[^\s"\']*\.jpg/i'
+			=> $theme_images_uri . 'service-web-design.jpg',
+
+		// 4. Service: Visa & Property (formerly cargo ship)
+		'/https?:\/\/[^\s"\']+\/Firefly-Portrait-Photograph-departure-of-a-cargo-ship[^\s"\']*\.jpg/i'
+			=> $theme_images_uri . 'service-visa-property.jpg',
+
+		// 5. Workflow Flowchart (formerly blurry flow-2 / flow2 images)
+		'/https?:\/\/[^\s"\']+\/flow-?2[^\s"\']*\.png/i'
+			=> $theme_images_uri . 'service-workflow-flow.jpg',
+	];
+
+	foreach ( $replacements as $pattern => $replacement ) {
+		$content = preg_replace( $pattern, $replacement, $content );
+	}
+
+	return $content;
+}
+add_filter( 'the_content', 'bizjapan_modernize_outdated_images', 15 );
+
+

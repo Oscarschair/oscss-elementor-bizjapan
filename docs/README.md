@@ -35,6 +35,7 @@
 | [0003-lolipop-deployment-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0003-lolipop-deployment-spec.md) | ロリポップ自動デプロイ・SSH Paramiko・キャッシュパージ仕様書 |
 | [0004-contact-form-email-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0004-contact-form-email-spec.md) | 自社製お問い合わせフォーム及びメール通知 (contact@oscarchair.jp) 仕様書 |
 | [0005-responsive-design-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0005-responsive-design-spec.md) | マルチデバイス完全レスポンシブデザイン仕様書 |
+| [0006-modern-image-asset-spec.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/specs/0006-modern-image-asset-spec.md) | 3Dモダン画像アセット刷新及び透過的自動置換仕様書 |
 
 ### 3. アーキテクチャ意思決定ログ (ADR: `docs/adr/`)
 | ADR | 決定内容 |
@@ -47,6 +48,7 @@
 | [0005-custom-contact-form-system.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0005-custom-contact-form-system.md) | Googleフォームからテーマ内蔵自社製Webフォーム（青基調）への移行及び自動メール通知の決定 |
 | [0006-responsive-optimization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0006-responsive-optimization.md) | 専用レスポンシブスタイルシートと Fluid Typography による完全レスポンシブ化の決定 |
 | [0007-codebase-refactoring-modularization.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0007-codebase-refactoring-modularization.md) | コードベースのリファクタリング（モジュール分離・アセット一元管理・スクリプト最適化） |
+| [0008-generated-modern-image-replacement.md](file:///c:/Users/user/git/oscss-elementor-bizjapan/docs/adr/0008-generated-modern-image-replacement.md) | AI画像生成による古臭い画像の一新及び透過的自動置換フィルター導入の決定 |
 
 ### 4. ドメイン・機能詳細仕様書 (`docs/domains/`)
 | ドメイン設計書 | 内容 |
