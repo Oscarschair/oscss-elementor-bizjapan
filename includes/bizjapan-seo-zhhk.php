@@ -241,4 +241,18 @@ function bizjapan_modernize_outdated_images( $content ) {
 }
 add_filter( 'the_content', 'bizjapan_modernize_outdated_images', 15 );
 
+/**
+ * 8. Dynamic Copyright Year Auto-Update Filter
+ * Guarantees current year and brand title in footer copyright
+ */
+function bizjapan_dynamic_copyright_filter( $text ) {
+	$current_year = date( 'Y' );
+	if ( empty( $text ) || false !== strpos( $text, '2022' ) ) {
+		return sprintf( '© %s 商業代辦服務 by OSCAR. All Rights Reserved.', $current_year );
+	}
+	return preg_replace( '/\b20\d{2}\b/', $current_year, $text );
+}
+add_filter( 'hello_elementor_hello_footer_copyright_text', 'bizjapan_dynamic_copyright_filter', 99 );
+
+
 

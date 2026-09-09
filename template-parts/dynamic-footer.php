@@ -54,7 +54,15 @@ $footer_nav_menu = wp_nav_menu( [
 
 		<?php if ( '' !== hello_elementor_get_setting( 'hello_footer_copyright_text' ) || $is_editor ) : ?>
 			<div class="copyright <?php echo esc_attr( hello_show_or_hide( 'hello_footer_copyright_display' ) ); ?>">
-				<p><?php echo wp_kses_post( hello_elementor_get_setting( 'hello_footer_copyright_text' ) ); ?></p>
+				<p><?php
+					$copyright = hello_elementor_get_setting( 'hello_footer_copyright_text' );
+					if ( empty( $copyright ) || false !== strpos( $copyright, '2022' ) ) {
+						$copyright = sprintf( '© %s 商業代辦服務 by OSCAR. All Rights Reserved.', date( 'Y' ) );
+					} else {
+						$copyright = preg_replace( '/\b20\d{2}\b/', date( 'Y' ), $copyright );
+					}
+					echo wp_kses_post( $copyright );
+				?></p>
 			</div>
 		<?php endif; ?>
 	</div>
